@@ -1,11 +1,10 @@
-function myFunction(){
-    // Assigning two variables
-    var part1="Hello";
-    var part2="World";
+function concatenateStrings() {
+    // Assigns a string variable
+    var sentence = "This is the biginning of the string";
 
-    // Combining the two variables
-    var fullMessage= part1 + part2;
+    // Using the += operator to concatenate
+    sentence += " and this is the end of the string";
 
-    // Using getElemenTById to display the message
-    document.getElementById("output").innerHTML=fullMessage;
+    // Displays the concatenated string
+    document.getElementById("output").innerHTML = sentence;
 }
