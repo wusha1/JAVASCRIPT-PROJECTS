@@ -1,2 +1,1 @@
-window.alert("This alert is using the window.alert() method!");
-
+document.write("This text was written using the document.write() method.");
