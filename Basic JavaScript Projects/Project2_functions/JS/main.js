@@ -1,10 +1,7 @@
-function concatenateStrings() {
-    // Assigns a string variable
-    var sentence = "This is the biginning of the string";
+function showMessage() {
+    // Create a variable with a message
+    var message = "This Message was displayed using a JavaScript function.";
 
-    // Using the += operator to concatenate
-    sentence += " and this is the end of the string";
-
-    // Displays the concatenated string
-    document.getElementById("output").innerHTML = sentence;
+    // Use getElement to display the message
+    document.getElementById("output").innerHTML = message;
 }
