@@ -1,1 +1,2 @@
-alert("Hello, this alert is coming from main.js!");
+window.alert("This alert is using the window.alert() method!");
+
