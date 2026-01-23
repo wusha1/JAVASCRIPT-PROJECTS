@@ -1,7 +1,12 @@
-function addNumbers() {
-    // Perform an addition operation
-    var result = 5 + 10;
+function multiplyAndDivide() {
+    // Perform a multiplication operation
+    var multiplication = 5 * 5;
 
-    // Display the result im the paragraph element
-    document.getElementById("Math").innerHTML = result;
+    // Perform a division operation
+    var division = 20 / 4;
+
+    // Display both results in the paragraph element
+    document.getElementById("Math").innerHTML =
+        "Multiplication result: " + multiplication +
+        "<br>Division result: " + division;
 }
