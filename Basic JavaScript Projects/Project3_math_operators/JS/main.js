@@ -1,10 +1,10 @@
-function concatenateStrings() {
-    // Assigns a string variable
-    var sentence = "This is the beginning of the string";
-
-    // Uses the += operator to concatenate
-    sentence += " and this is the end of the string";
-
-    // Displays the results
-    document.getElementById("output").innerHTML = sentence;
+function multiplyandDivide() {
+    // Multiplication operation
+    var multiply = 6 * 5;
+    // Division
+    var divide = 30 / 6;
+    // Display both results
+    document.getElementById("Math").innerHTML =
+        "Multiplication result:" + multiply +
+        "<br>Division result:" + divide;
 }
