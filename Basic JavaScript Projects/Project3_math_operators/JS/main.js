@@ -1,8 +1,11 @@
-function showRemainder() {
-    // Modulus operation (remainder)
-    var remainder = 25 % 6;
+function negateNumber() {
+    // Assign a positive number
+    var number = 10;
+
+    // Use the negation operator
+    var negatedNumber = -number;
 
     // Display the result
     document.getElementById("Math").innerHTML =
-        "The remainder is: " + remainder;
+        "The negated value is: " + negatedNumber;
 }
