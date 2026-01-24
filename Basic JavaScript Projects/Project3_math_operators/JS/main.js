@@ -1,12 +1,10 @@
-function multiplyAndDivide() {
-    // Perform a multiplication operation
-    var multiplication = 5 * 5;
+function concatenateStrings() {
+    // Assigns a string variable
+    var sentence = "This is the beginning of the string";
 
-    // Perform a division operation
-    var division = 20 / 4;
+    // Uses the += operator to concatenate
+    sentence += " and this is the end of the string";
 
-    // Display both results in the paragraph element
-    document.getElementById("Math").innerHTML =
-        "Multiplication result: " + multiplication +
-        "<br>Division result: " + division;
+    // Displays the results
+    document.getElementById("output").innerHTML = sentence;
 }

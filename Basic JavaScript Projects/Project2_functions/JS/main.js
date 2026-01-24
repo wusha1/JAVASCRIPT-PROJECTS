@@ -1,7 +1,10 @@
-function showMessage() {
-    // Create a variable with a message
-    var message = "This Message was displayed using a JavaScript function.";
+function concatenateStrings() {
+    // Assigns a string variable
+    var sentence = "This is the beginning of the string";
 
-    // Use getElement to display the message
-    document.getElementById("output").innerHTML = message;
+    // Uses the += operator to concatenate
+    sentence += " and this is the end of the string";
+
+    // Displays the results
+    document.getElementById("output").innerHTML = sentence;
 }
