@@ -1,21 +1,8 @@
-function incrementAndDecrement() {
-    // Assign a starting number
-    var number = 10;
+function showRandomNumber() {
+    // Generate a random number between 0 and 1
+    var randomNumber = Math.random();
 
-    // Increment the number
-    number++;
-
-    // Store increment result
-    var incrementResult = number;
-
-    // Decrement the number
-    number--;
-
-    // Store decrement result
-    var decrementResult = number;
-
-    // Display both results
+    // Display the random number
     document.getElementById("Math").innerHTML =
-        "Increment result: " + incrementResult +
-        "<br>Decrement result: " + decrementResult;
+        "Random number: " + randomNumber;
 }
