@@ -1,20 +1,17 @@
-// Constructor function
-function Vehicle(Make, Model, Year, Color) {
-    this.Vehicle_Make = Make;
-    this.Vehicle_Model = Model;
-    this.Vehicle_Year = Year;
-    this.Vehicle_Color = Color;
+// Construct function
+function Person(Name, Age, Job) {
+    this.Person_Name = Name;
+    this.Person_Age = Age;
+    this.Person_Job = Job;
 }
 
-// Objects created using the "new" keyword
-var Jack = new Vehicle("Dodge", "Viper", 2020, "Red");
-var Emily = new Vehicle("Jeep", "Trail Hawk", 2019, "White and Black");
-var Erik = new Vehicle("Ford", "Pinto", 1971, "Mustard");
+// Using the "new" keyword
+var Victor = new Person("Victor", 36, "Developer");
 
-// Function displaying object data
+// Function to display the object
 function myFunction() {
-    document.getElementById("Keywords_and_Constructors").innerHTML =
-        "Erik drives a " + Erik.Vehicle_Color + "-colored " +
-        Erik.Vehicle_Model + " manufactured in " +
-        Erik.Vehicle_Year;
+    document.getElementById("New_and_This").innerHTML =
+        Victor.Person_Name + " is " +
+        Victor.Person_Age + " years old and works as a " +
+        Victor.Person_Job + ".";
 }
