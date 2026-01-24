@@ -1,2 +1,2 @@
-document.getElementById("Infinity").innerHTML =
-  2E310 + "<br>" + -2E310;
+// Perform a math operation and log the result to the console
+console.log(10 + 5);
