@@ -1,17 +1,12 @@
-// Construct function
-function Person(Name, Age, Job) {
-    this.Person_Name = Name;
-    this.Person_Age = Age;
-    this.Person_Job = Job;
+// Constructor Function (VALID CODE)
+function Animal(Type, Age) {
+    this.Animal_Type = Type;
+    this.Animal_Age = Age;
 }
 
-// Using the "new" keyword
-var Victor = new Person("Victor", 36, "Developer");
+// Creating an object using the constructor
+var Dog = new Animal("Dog", 5);
 
-// Function to display the object
-function myFunction() {
-    document.getElementById("New_and_This").innerHTML =
-        Victor.Person_Name + " is " +
-        Victor.Person_Age + " years old and works as a " +
-        Victor.Person_Job + ".";
-}
+// Displaying constructor result
+document.getElementById("Result").innerHTML =
+    "The animal is a " + Dog.Animal_Type + " and is " + Dog.Animal_Age + " years old.";
