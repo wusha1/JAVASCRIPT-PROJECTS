@@ -1,8 +1,9 @@
-function showRandomNumber() {
-    // Generate a random number between 0 and 1
-    var randomNumber = Math.random();
+function useMathObject() {
+    // Use a Math object method
+    var number = 4.7;
+    var roundedNumber = Math.round(number);
 
-    // Display the random number
+    // Display the result
     document.getElementById("Math").innerHTML =
-        "Random number: " + randomNumber;
+        "Rounded value: " + roundedNumber;
 }
