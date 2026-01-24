@@ -1,2 +1,2 @@
-// Perform a math operation and log the result to the console
-console.log(10 + 5);
+// Boolean logic that shows false
+console.log(5 > 10);
