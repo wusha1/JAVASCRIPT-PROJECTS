@@ -1,5 +1,8 @@
-// Assign a variable
-var myVariable = "Hello, world!";
+// Display NaN by attempting an invalid math operation
+document.write(0 / 0 + "<br>");
 
-// Display the data type of the variable
-document.write(typeof myVariable);
+// Use isNaN() to display true
+document.write(isNaN("Hello") + "<br>");
+
+// Use isNaN() to display false
+document.write(isNaN(10));
