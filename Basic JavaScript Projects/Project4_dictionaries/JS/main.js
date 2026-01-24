@@ -1,15 +1,15 @@
 function myDictionary() {
-    // Created a dictionary using a JavaScript object
-    var GameCharacter = {
-        Name: "Captain Vale",
-        Class: "Pirate",
-        Level: 7,
-        Weapon: "Cutlass"
+    // Createa a dictionary using a JavaScript
+    var Animal = {
+        Type: "Dog",
+        Breed: "Husky",
+        Age: 3,
+        Color: "Gray"
     };
 
-    // Delete a value from the dictionary
-    delete GameCharacter.Weapon;
+    // Deletes a key-value pair from the dictionary
+    delete Animal.Color;
 
-    // Attempt to display the deleted value
-    document.getElementById("Dictionary").innerHTML = GameCharacter.Weapon;
+    // Displays the deleted value which shows as unrefined
+    document.getElementById("Dictionary").innerHTML = Animal.Color;
 }
