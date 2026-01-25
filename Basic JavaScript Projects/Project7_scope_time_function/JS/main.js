@@ -1,18 +1,9 @@
-function getTime() {
-    var Time = new Date().getHours();
-    var Reply;
+function Check_Number() {
+    var Number = 10;
 
-    // if statement using Date().getHours()
-    if (Time < 12) {
-        Reply = "Good morning!";
+    // Simple if statement
+    if (Number > 5) {
+        document.getElementById("If_Result").innerHTML =
+            "The number is greater than 5.";
     }
-    else if (Time < 18) {
-        Reply = "Good afternoon!";
-    }
-    else {
-        Reply = "Good evening!";
-    }
-
-    // Display result in the HTML element
-    document.getElementById("Time_Message").innerHTML = Reply;
 }
