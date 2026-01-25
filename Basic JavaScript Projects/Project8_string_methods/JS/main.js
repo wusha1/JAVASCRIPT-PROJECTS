@@ -1,10 +1,10 @@
-function convertToString() {
-    var num = 456;
+function usePrecision() {
+    var number = 123.456789;
 
-    // toString() converts a number into a string
-    var result = num.toString();
+    // toPrecision() formats the number to a specified length
+    var result = number.toPrecision(5);
 
-    // Displays the results in the browser
-    document.getElementById("Number_Output").innerHTML =
-        "Converted number as a string: " + result;
+    // Display the result in the browser
+    document.getElementById("Precision_Result").innerHTML =
+        "Number formatted with toPrecision(): " + result;
 }
