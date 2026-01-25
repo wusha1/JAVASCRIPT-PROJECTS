@@ -1,9 +1,18 @@
-function useSlice() {
-    var text = "Learning JavaScript is fun and powerful.";
+// toUpperCase() METHOD
+// Converts a string to uppercase
+function makeUppercase() {
+    var text = "learning javascript is fun";
+    var result = text.toUpperCase();
 
-    // slice() extracts part of the string
-    var result = text.slice(9, 19);
+    document.getElementById("Uppercase_Result").innerHTML = result;
+}
 
-    // Displays the sliced section
-    document.getElementById("Slice_Result").innerHTML = result;
+// search() METHOD
+// Finds the position of a word in a string
+function searchText() {
+    var sentence = "JavaScript makes web development powerful";
+    var position = sentence.search("web");
+
+    document.getElementById("Search_Result").innerHTML =
+        "The word 'web' starts at position: " + position;
 }
