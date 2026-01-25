@@ -1,11 +1,9 @@
-function combineStrings() {
-    var part1 = "Learning ";
-    var part2 = "JavaScript ";
-    var part3 = "is fun!";
+function useSlice() {
+    var text = "Learning JavaScript is fun and powerful.";
 
-    // concat() method joins the strings together
-    var fullSentence = part1.concat(part2, part3);
+    // slice() extracts part of the string
+    var result = text.slice(9, 19);
 
-    // Displays the results in the HTML element
-    document.getElementById("Concatenate").innerHTML = fullSentence;
+    // Displays the sliced section
+    document.getElementById("Slice_Result").innerHTML = result;
 }
