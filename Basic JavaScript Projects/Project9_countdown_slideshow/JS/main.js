@@ -1,15 +1,40 @@
-function countdown() {
-    var seconds = document.getElementById("seconds").value;
+// Keeps track of which slide is showing
+var slideIndex = 1;
 
-    function tick() {
-        seconds = seconds - 1;
-        TimeRanges.innerHTML = seconds;
-        var time = setTimeout(tick, 1000);
-        if (seconds == -1) {
-            alert("Time's up!");
-            clearTimeout(time);
-            TimeRanges.innerHTML = "";
-        }
+// Show the first slide when the page loads
+showSlides(slideIndex);
+
+// Next/ and previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Dot controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+//function that shows the the slides
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+
+    // Loop back to start/end
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+
+    // Hides all slides
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
     }
-    tick();
+
+    // Remove active class from dots
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    // Show the current slide + activate its dot
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
