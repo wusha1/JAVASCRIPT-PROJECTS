@@ -1,5 +1,7 @@
-function let_function() {
-    let message = "The let keyword allows variables to be reassigned.";
+function return_Function() {
+    document.getElementById("Return").innerHTML = get_Message();
+}
 
-    document.getElementById("Constant").innerHTML = message;
+function get_Message() {
+    return "This message was returned from a function.";
 }
