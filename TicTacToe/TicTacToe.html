@@ -5,20 +5,23 @@
     <title>Play Tic Tac Toe Online!</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/game.css">
 
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/game.css">
 </head>
 
 <body id="body">
 
+    <!-- Page Title -->
     <h1>TIC TAC TOE GAME</h1>
 
-    <!-- This container is needed to overlay our canvas over our table -->
+    <!-- This container overlays the canvas on top of the table -->
     <div class="center-container">
 
-        <!-- NOTE: Canvas width and height must be within the element -->
+        <!-- Canvas for drawing win lines -->
         <canvas id="win-lines" width="608" height="608"></canvas>
 
+        <!-- Tic Tac Toe grid -->
         <table>
             <tr>
                 <td id="0" onclick="placeXorO('0')"></td>
@@ -38,8 +41,9 @@
         </table>
 
     </div>
+
+    <!-- Link to JavaScript -->
     <script src="js/tictactoe.js"></script>
 
 </body>
-
 </html>
