@@ -1,37 +1,52 @@
 // Keeps track of whose turn it is
 let activePlayer = "X";
 
-// Stores selected squares
+// Stores selected squares in the format: "squareNumber" + "X" or "O"
 let selectedSquares = [];
 
-// Places X or O in the chosen square
+// Places X or O image in the chosen square
 function placeXorO(squareNumber) {
-    if (document.getElementById(squareNumber).innerHTML !== "") {
+    const select = document.getElementById(squareNumber);
+
+    // If the square already has a background image, it's taken
+    if (select.style.backgroundImage !== "") {
         return false;
     }
 
-    document.getElementById(squareNumber).innerHTML = activePlayer;
-    selectedSquares.push(squareNumber + activePlayer);
-
-    audio('./media/place.mp3');
-
-    checkWinConditions();
-
+    // Set the correct image (this is what your instructor was referring to)
     if (activePlayer === "X") {
-        activePlayer = "O";
+        select.style.backgroundImage = "url('./images/x.png')";
     } else {
-        activePlayer = "X";
+        select.style.backgroundImage = "url('./images/o.png')";
     }
 
-    if (activePlayer === 'O') {
+    // Track the move
+    selectedSquares.push(squareNumber + activePlayer);
+
+    // Play placement sound
+    audio('./media/place.mp3');
+
+    // If someone won or it's a tie, stop here (reset happens after sound/line)
+    if (checkWinConditions()) {
+        return true;
+    }
+
+    // Switch player
+    activePlayer = (activePlayer === "X") ? "O" : "X";
+
+    // Computer plays as O
+    if (activePlayer === "O") {
         disableClick();
-        setTimeout(function () { computersTurn(); enableClick(); }, 1000);
+        setTimeout(function () {
+            computersTurn();
+            enableClick();
+        }, 1000);
     }
 
     return true;
 }
 
-// This function results in a random square being selected by the computer.
+// Random square selection for computer
 function computersTurn() {
     let success = false;
     let pickASquare;
@@ -44,41 +59,49 @@ function computersTurn() {
     }
 }
 
-// This function parses the selectedSquares array to search for win conditions.
-// drawWinLine() function is called to draw a line on the screen if the condition is met.
+// Checks win/tie conditions.
+// Returns true if the game is over (win or tie), otherwise false.
 function checkWinConditions() {
+    // X wins
+    if (arrayIncludes('0X', '1X', '2X')) { drawWinLine(50, 100, 558, 100); return true; }
+    else if (arrayIncludes('3X', '4X', '5X')) { drawWinLine(50, 304, 558, 304); return true; }
+    else if (arrayIncludes('6X', '7X', '8X')) { drawWinLine(50, 508, 558, 508); return true; }
+    else if (arrayIncludes('0X', '3X', '6X')) { drawWinLine(100, 50, 100, 558); return true; }
+    else if (arrayIncludes('1X', '4X', '7X')) { drawWinLine(304, 50, 304, 558); return true; }
+    else if (arrayIncludes('2X', '5X', '8X')) { drawWinLine(508, 50, 508, 558); return true; }
+    else if (arrayIncludes('6X', '4X', '2X')) { drawWinLine(100, 508, 510, 90); return true; }
+    else if (arrayIncludes('0X', '4X', '8X')) { drawWinLine(100, 100, 520, 520); return true; }
 
-    if (arrayIncludes('0X', '1X', '2X')) { drawWinLine(50, 100, 558, 100); }
-    else if (arrayIncludes('3X', '4X', '5X')) { drawWinLine(50, 304, 558, 304); }
-    else if (arrayIncludes('6X', '7X', '8X')) { drawWinLine(50, 508, 558, 508); }
-    else if (arrayIncludes('0X', '3X', '6X')) { drawWinLine(100, 50, 100, 558); }
-    else if (arrayIncludes('1X', '4X', '7X')) { drawWinLine(304, 50, 304, 558); }
-    else if (arrayIncludes('2X', '5X', '8X')) { drawWinLine(508, 50, 508, 558); }
-    else if (arrayIncludes('6X', '4X', '2X')) { drawWinLine(100, 508, 510, 90); }
-    else if (arrayIncludes('0X', '4X', '8X')) { drawWinLine(100, 100, 520, 520); }
+    // O wins
+    else if (arrayIncludes('0O', '1O', '2O')) { drawWinLine(50, 100, 558, 100); return true; }
+    else if (arrayIncludes('3O', '4O', '5O')) { drawWinLine(50, 304, 558, 304); return true; }
+    else if (arrayIncludes('6O', '7O', '8O')) { drawWinLine(50, 508, 558, 508); return true; }
+    else if (arrayIncludes('0O', '3O', '6O')) { drawWinLine(100, 50, 100, 558); return true; }
+    else if (arrayIncludes('1O', '4O', '7O')) { drawWinLine(304, 50, 304, 558); return true; }
+    else if (arrayIncludes('2O', '5O', '8O')) { drawWinLine(508, 50, 508, 558); return true; }
+    else if (arrayIncludes('6O', '4O', '2O')) { drawWinLine(100, 508, 510, 90); return true; }
+    else if (arrayIncludes('0O', '4O', '8O')) { drawWinLine(100, 100, 520, 520); return true; }
 
-    else if (arrayIncludes('0O', '1O', '2O')) { drawWinLine(50, 100, 558, 100); }
-    else if (arrayIncludes('3O', '4O', '5O')) { drawWinLine(50, 304, 558, 304); }
-    else if (arrayIncludes('6O', '7O', '8O')) { drawWinLine(50, 508, 558, 508); }
-    else if (arrayIncludes('0O', '3O', '6O')) { drawWinLine(100, 50, 100, 558); }
-    else if (arrayIncludes('1O', '4O', '7O')) { drawWinLine(304, 50, 304, 558); }
-    else if (arrayIncludes('2O', '5O', '8O')) { drawWinLine(508, 50, 508, 558); }
-    else if (arrayIncludes('6O', '4O', '2O')) { drawWinLine(100, 508, 510, 90); }
-    else if (arrayIncludes('0O', '4O', '8O')) { drawWinLine(100, 100, 520, 520); }
-
+    // Tie
     else if (selectedSquares.length >= 9) {
+        disableClick();
         audio('./media/tie.mp3');
-        setTimeout(function () { resetGame(); }, 500);
+        setTimeout(function () {
+            resetGame();
+            enableClick();
+        }, 800);
+        return true;
     }
+
+    return false;
 }
 
-// This function checks if an array includes 3 strings.
+// Checks if selectedSquares includes all 3 entries
 function arrayIncludes(squareA, squareB, squareC) {
     const a = selectedSquares.includes(squareA);
     const b = selectedSquares.includes(squareB);
     const c = selectedSquares.includes(squareC);
-
-    if (a === true && b === true && c === true) { return true; }
+    return (a && b && c);
 }
 
 function disableClick() {
@@ -90,152 +113,70 @@ function enableClick() {
 }
 
 function audio(audioURL) {
-    let sound = new Audio(audioURL);
+    const sound = new Audio(audioURL);
     sound.play();
 }
 
-//This function utilizes HTML canvas to draw win lines.
+// Draws win line using canvas and then resets the game
 function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
-
-    //This line accesses our HTML canvas element.
     const canvas = document.getElementById('win-lines');
-
-    //This line gives us access to methods and properties to use on canvas.
     const c = canvas.getContext('2d');
 
-    //This line indicates where the start of a lines x axis is.
     let x1 = coordX1,
-
-        //This line indicates where the start of a lines y axis is.
         y1 = coordY1,
-
-        //This line indicates where the end of a lines x axis is.
         x2 = coordX2,
-
-        //This line indicates where the end of a lines y axis is.
         y2 = coordY2,
-
-        //This variable stores temporary x axis data we update in our animation loop.
         x = x1,
-
-        //This variable stores temporary y axis data we update in our animation loop.
         y = y1;
 
-    //This function interacts with the canvas.
     function animateLineDrawing() {
-
-        //This variable creates a loop.
         const animationLoop = requestAnimationFrame(animateLineDrawing);
 
-        //This method clears content from the last loop iteration.
         c.clearRect(0, 0, 608, 608);
-
-        //This method starts a new path.
         c.beginPath();
-
-        //This method moves us to a starting point in our line.
         c.moveTo(x1, y1);
-
-        //This method indicates the end point in our line.
         c.lineTo(x, y);
-
-        //This method sets the width of our line.
         c.lineWidth = 10;
-
-        //This method sets the color of our line.
         c.strokeStyle = 'rgba(70, 255, 33, .8)';
-
-        //This method draws everything we laid out above.
         c.stroke();
 
-        //This condition checks if we've reached the endpoints.
         if (x1 <= x2 && y1 <= y2) {
-
-            //This condition adds 10 to the previous end x endpoint.
             if (x < x2) { x += 10; }
-
-            //This condition adds 10 to the previous end y endpoint.
             if (y < y2) { y += 10; }
-
-            //This condition is similar to the one above.
-            //This is necessary for the 6, 4, 2 win conditions.
-            if (x >= x2 && y >= y2) {
-                cancelAnimationFrame(animationLoop);
-            }
+            if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }
         }
 
-        //This condition is similar to the one above.
-        //This is necessary for the 6, 4, 2 win condition.
         if (x1 <= x2 && y1 >= y2) {
-
             if (x < x2) { x += 10; }
             if (y > y2) { y -= 10; }
-
-            if (x >= x2 && y <= y2) {
-                cancelAnimationFrame(animationLoop);
-            }
+            if (x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop); }
         }
     }
 
-    //This function clears our canvas after our win line is drawn.
-    function clear() {
-
-        //This line starts our animation loop.
-        const animationLoop = requestAnimationFrame(clear);
-
-        //This line clears our canvas.
+    function clearCanvas() {
+        const animationLoop = requestAnimationFrame(clearCanvas);
         c.clearRect(0, 0, 608, 608);
-
-        //This line stops our animation loop.
         cancelAnimationFrame(animationLoop);
     }
 
-    //This line disallows clicking while the win sound is playing
     disableClick();
-
-    //this line plays the win sounds.
     audio('./media/winGame.mp3');
-
-    //This line calls our main animation loop.
     animateLineDrawing();
 
-    //This line waits 1 second. Then, clears canvas, resets game, an allows clicking again.
     setTimeout(function () {
-        clear();
+        clearCanvas();
         resetGame();
-    }, 1000);
+        enableClick();
+    }, 1200);
 }
 
-//This function resets the game in the event of a tie or a win.
+// Resets the board after a win or tie
 function resetGame() {
-
-    //This for loop iterates through each HTML square element.
     for (let i = 0; i < 9; i++) {
-
-        //This variable gets the HTML element i.
-        let square = document.getElementById(String(i));
-
-        //This removes our elements backgroundImage.
+        const square = document.getElementById(String(i));
         square.style.backgroundImage = '';
     }
 
-    //This resets our array so it is empty and we can start over.
     selectedSquares = [];
-}
-
-//This function resets the game in the event of a tie or a win.
-function resetGame() {
-
-    //This for loop iterates through each HTML square element.
-    for (let i = 0; i < 9; i++) {
-
-        //This variable gets the HTML element i.
-        let square = document.getElementById(String(i));
-
-        //This removes our elements backgroundImage.
-        square.style.backgroundImage = '';
-    }
-
-    //This resets our array so it is empty and we can start over.
-    selectedSquares = [];
+    activePlayer = "X";
 }
