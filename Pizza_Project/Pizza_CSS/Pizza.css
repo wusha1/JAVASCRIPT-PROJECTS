@@ -1,11 +1,11 @@
 #menuBG {
-    width: 400px;
+    width: 600px;
     height: 470px;
     margin: 10px auto;
 }
 
 #frmMenu {
-    width: 400px;
+    width: 600px;
     height: 200px;
 }
 
@@ -20,6 +20,12 @@
     width: 200px;
     height: 200px;
     float: left;
+}
+
+.menu_middle {
+    width:200px;
+    height:200px;
+    float:left;
 }
 
 .right {
@@ -38,12 +44,12 @@
 #cart {
     top: 0;
     margin: 0px auto;
-    width: 400px;
+    width: 600px;
     height: 200px;
 }
 
 #btnOrder {
-    margin: 10px 0px 0px 100px;
+    margin: 10px 0px 0px 250px;
     width: 100px;
     height: 40px
 }
