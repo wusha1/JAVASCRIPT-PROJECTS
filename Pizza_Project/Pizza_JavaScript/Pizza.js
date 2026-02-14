@@ -1,6 +1,6 @@
 function getReceipt() {
-    // This initializes our string so it can get passed from
-    // function to function, growing line by line into a full receipt
+    // This starts our string so it can get passed from
+    // function to function, it will grow line by line into a full receipt
     var text1 = "<h3>You Ordered:</h3>";
     var runningTotal = 0;
     var sizeTotal = 0;
@@ -10,6 +10,7 @@ function getReceipt() {
             var selectedSize = sizeArray[i].value;
             text1 = text1 + selectedSize + "<br>";
         }
+    // Pizza Size Selection
     }
     if (selectedSize === "Personal Pizza") {
         sizeTotal = 6;
