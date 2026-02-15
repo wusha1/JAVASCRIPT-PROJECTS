@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Page Website</title>
+    <link rel="stylesheet" href="one_page_website.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <main id="main">
+
+        <!-- Navigation -->
+        <nav aria-label="Main Navigation">
+            <a href="#home">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#video">Video</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <hr>
+
+        <!-- Home Section -->
+        <section id="home">
+            <h1>Welcome to My One Page-Website</h1>
+            <p>
+                This is a simple one-page website I created using HTML.
+                it contains images, a video, a contract form, and navigation using HTML bookmarks.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Image Section -->
+        <section id="gallery">
+            <h2>Image Gallery</h2>
+
+            <img src="images/Game Dev_1.jpg" data-large="images/Game Dev_1.jpg" alt="Sample image 1" width="300">
+            <img src="images/Game Dev_2.jpg" data-large="images/Game Dev_2.jpg" alt="Sample image 2" width="300">
+            <img src="images/Game Dev_3.jpg" data-large="images/Game Dev_3.jpg" alt="Sample image 3" width="300">
+        </section>
+
+        <hr>
+
+        <!-- Video Section -->
+        <section id="video">
+            <h2>Featured Video</h2>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wBfc80Uvi_Q"
+                title="Game Development Video" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-pictures"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+        <hr>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+
+            <form>
+                <label for="Name">Name:</label><br>
+                <input id="name" type="text" name="name"><br><br>
+                <label for="email">Email:</label><br>
+                <input id="email" type="email" name="email"><br><br>
+
+                <label for="messege">Message:</label><br>
+                <input id="messsage" type="text" name="message"><br><br>
+
+                <input type="submit" value="Send">
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 My One Page Website</p>
+        </footer>
+        <script src="JS/one_page_website.js"></script>
+
+</body>
+
+</html>
