@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Elements Challenge</title>
+</head>
+
+<body>
+
+    <h1 id="mainHeading">Sign Up Confirmation</h1>
+
+    <button id="confirmBtn">Confirm Signup</button>
+
+    <script>
+        // Attach an event listener to the button
+        document.getElementById("confirmBtn")
+            .addEventListener("click", function () {
+
+                // Change the document title
+                document.title = "Signup Confirmed";
+
+                // Change the heading text
+                document.getElementById("mainHeading").innerHTML =
+                    "Thank you for signing up!";
+
+                // Create a new paragraph element
+                const newParagraph = document.createElement("p");
+
+                // Create a text node and append it
+                const textNode = document.createTextNode(
+                    "This message was created dynamically using DOM methods."
+                );
+
+                newParagraph.appendChild(textNode);
+
+                // Append the paragraph to the body
+                document.body.appendChild(newParagraph);
+            });
+    </script>
+
+</body>
+</html>
