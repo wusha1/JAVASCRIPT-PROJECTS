@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>XML Practice</h2>
+<p id="My_XML_Output"></p>
+
+<script>
+var XML_Parser, XML_Document;
+
+// Create a custom XML text string
+var Book = "<book>" +
+"<title>The Great Adventure</title>" +
+"<author>Jordan Smith</author>" +
+"<genre>Fiction</genre>" +
+"<year>2024</year>" +
+"</book>";
+
+// Create XML DOM parser
+XML_Parser = new DOMParser();
+
+// Parse the XML string into an XML document
+XML_Document = XML_Parser.parseFromString(Book,"text/xml");
+
+// Use getElementsByTagName() to display the text inside the <author> tag
+document.getElementById("My_XML_Output").innerHTML =
+XML_Document.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+
+</script>
+
+</body>
+</html>
