@@ -1,16 +1,28 @@
 html {
     font-family: "Avenir Next", Helvetica, sans-serif;
     text-align: center;
+    height: 100%;
 }
 
 body {
     max-width: 500px;
     margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Center main UI */
+#task,
+#add,
+#todos {
+    margin: 10px auto;
+}
+
+/* Input styling */
 input {
     padding-top: 30px;
-    width: 500px;
+    width: 100%;
     height: 60px;
     font-size: 40px;
     border: 0;
@@ -25,4 +37,12 @@ li {
     font-size: 40px;
     list-style: none;
     margin: 0;
+}
+
+/* Footer styling */
+footer {
+    margin-top: auto; /* pushes footer to bottom */
+    border-top: 2px solid #ccc;
+    padding: 15px;
+    font-size: 14px;
 }
