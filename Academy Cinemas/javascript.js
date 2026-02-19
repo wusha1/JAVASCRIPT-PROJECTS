@@ -40,7 +40,7 @@ function buyTickets() {
 
 // JQUERY
 
-// Shrinks header size when the document is scrolled down by 50 pixels
+// Shrinks navbar size when the document is scrolled down by 50 pixels
 $(document).on("scroll", function () {
 
   if ($(document).scrollTop() > 50) {
