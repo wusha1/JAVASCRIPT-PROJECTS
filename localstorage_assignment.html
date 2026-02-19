@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>localStorage Assignment</title>
+</head>
+<body>
+
+<h2>localStorage Example</h2>
+
+<p id="output"></p>
+
+<script>
+    // Stores data in localStorage
+    localStorage.setItem("username", "Victor");
+
+    // Retrieves data from localStorage
+    const storedName = localStorage.getItem("username");
+
+    // Displays it on the page
+    document.getElementById("output").innerText =
+        "Stored name: " + storedName;
+
+    // Also log it to console
+    console.log(storedName);
+</script>
+
+</body>
+</html>
