@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Animation Challenge</title>
+
+<style>
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+
+  /* Apply animation */
+  animation: moveBox 3s infinite;
+}
+
+/* This is the Keyframe rule */
+@keyframes moveBox {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(300px);
+    background-color: red;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Animation Challenge</h2>
+<div class="box"></div>
+
+</body>
+</html>
