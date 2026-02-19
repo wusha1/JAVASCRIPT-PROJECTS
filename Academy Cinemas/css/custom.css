@@ -38,12 +38,6 @@ body {
     height: 100px;
 }
 
-/*SHRINK ON SCROLL NAVBAR*/
-.nav-shrink {
-    height: 80px;
-    transition: .5s ease;
-}
-
 /*Adds a transition to the movie drop down menu on shrink and scroll*/
 .navbar-collapse{
     transition: margin-top 0.5s ease;
@@ -79,6 +73,35 @@ in other words the "active link"*/
 /*Adjusts the left padding of the navbar links*/
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-left: 1.5rem;
+}
+
+/* Smooth transition when shrinking */
+.navbar,
+.navbar-brand,
+.nav-link {
+  transition: all 0.25s ease;
+}
+
+/* Shrunk navbar state (added by your jQuery on scroll) */
+.navbar.nav-shrink {
+  height: 70px;                 /* shrink height */
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Shrink the brand + links */
+.navbar.nav-shrink .navbar-brand {
+  font-size: 32px;              /* smaller title */
+}
+
+.navbar.nav-shrink .nav-link {
+  font-size: 26px;              /* smaller links */
+}
+
+/* Optional: tighten spacing a little */
+.navbar.nav-shrink .navbar-nav .nav-link {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 /*MOVIE DROP DOWN MENU*/
