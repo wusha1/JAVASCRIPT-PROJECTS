@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Slideshow Challenge</title>
+
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background: #111; color: white; }
+    .slideshow-container { max-width: 700px; margin: 30px auto; }
+    .slide { display: none; padding: 80px 20px; border-radius: 12px; font-size: 40px; font-weight: bold; }
+    .s1 { background: #3498db; }
+    .s2 { background: #e74c3c; }
+    .s3 { background: #2ecc71; }
+  </style>
+</head>
+
+<body>
+  <h2>Automatic Slideshow</h2>
+
+  <div class="slideshow-container">
+    <div class="slide s1">Slide 1</div>
+    <div class="slide s2">Slide 2</div>
+    <div class="slide s3">Slide 3</div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      const slides = document.getElementsByClassName("slide");
+
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+
+      slides[slideIndex - 1].style.display = "block";
+
+      setTimeout(showSlides, 2000); // 2 seconds
+    }
+  </script>
+</body>
+</html>
