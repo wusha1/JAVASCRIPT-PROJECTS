@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON.stringify Assignment</title>
+</head>
+<body>
+
+<h2>JSON.stringify() Example</h2>
+<p id="output"></p>
+
+<script>
+    // Creates a JavaScript object
+    const person = {
+        name: "Victor",
+        age: 30,
+        occupation: "Developer"
+    };
+
+    // Converts object to JSON string
+    const jsonString = JSON.stringify(person);
+
+    // Displays it in the browser
+    document.getElementById("output").innerText = jsonString;
+
+    // Also logs it to console
+    console.log(jsonString);
+</script>
+
+</body>
+</html>
