@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>React 2</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
+</head>
+
+<body>
+
+  <div id="like_button_container"></div>
+
+  <script>
+    var LikeButton = React.createClass({
+      getInitialState: function () {
+        return { liked: false };
+      },
+
+      handleClick: function () {
+        this.setState({ liked: true });
+      },
+
+      render: function () {
+        if (this.state.liked) {
+          return React.createElement('span', null, 'You clicked the like button!');
+        }
+
+        return React.createElement(
+          'button',
+          { onClick: this.handleClick },
+          'Like'
+        );
+      }
+    });
+
+    ReactDOM.render(
+      React.createElement(LikeButton, null),
+      document.getElementById('like_button_container')
+    );
+  </script>
+
+</body>
+</html>
