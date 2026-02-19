@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Sticky Contact Challenge</title>
+
+<style>
+body {
+    /*Allows Scrolling*/
+    font-family: Arial, sans-serif;
+    height: 2000px; 
+    margin: 0;
+}
+
+/* Sticky Button */
+.contact-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Popup Form Container */
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    border: 2px solid #ccc;
+    background-color: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+/* Form Styling */
+.form-popup input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 10px 0;
+}
+
+.form-popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1 style="text-align:center;">Sticky Contact Challenge</h1>
+
+<!-- Sticky Button -->
+<button class="contact-btn" onclick="openForm()">Contact Us</button>
+
+<!-- Popup Form -->
+<div class="form-popup" id="contactForm">
+    <h3>Contact Form</h3>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <button onclick="closeForm()">Submit</button>
+</div>
+
+<script>
+function openForm() {
+    document.getElementById("contactForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("contactForm").style.display = "none";
+}
+</script>
+
+</body>
+</html>
