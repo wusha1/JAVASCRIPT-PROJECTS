@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ondblclick Challenge</title>
+</head>
+<body>
+
+<h2>Double Click Event Challenge</h2>
+
+<p ondblclick="changeText()" id="demo">
+    Double-click this paragraph to change the text!
+</p>
+
+<script>
+    function changeText() {
+        document.getElementById("demo").innerHTML =
+            "You successfully double-clicked the paragraph!";
+    }
+</script>
+
+</body>
+</html>
