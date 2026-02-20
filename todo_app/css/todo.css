@@ -39,6 +39,10 @@ li {
     margin: 0;
 }
 
+.remove {
+    padding-bottom: 5px;
+}
+
 /* Footer styling */
 footer {
     margin-top: auto; /* pushes footer to bottom */

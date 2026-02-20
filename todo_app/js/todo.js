@@ -43,9 +43,28 @@ function show() {
     html += '</ul>';
     /*This displays the task as a list*/
     document.getElementById('todos').innerHTML = html;
+
+    var buttons = document.getElementsByClassName('remove');
+
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', remove);
+    };
 }
 
 /*This displays the inputed task when the 'Add Item' button is clicked*/
 document.getElementById('add').addEventListener('click', add);
 /*this will keep the inputs displayed permantaly on the screen*/
 show();
+
+/* this creates the functionality of removing a todo item from the array */
+function remove() {
+    var id = this.getAttribute('id');
+    var todos = get_todos();
+
+    todos.splice(id, 1);
+
+    localStorage.setItem('todo', JSON.stringify(todos));
+    show();
+
+    return false;
+}
