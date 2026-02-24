@@ -8,7 +8,7 @@ Projects
 
 Pizza Menu
 A dynamic pizza ordering menu that allows users to select different sizes and toppings. The application calculates the total price based on user selections and displays a detailed receipt.  
-**Skills Demonstrated:**
+Skills Demonstrated:
 - DOM manipulation
 - Functions and conditional logic
 - Form handling
@@ -18,7 +18,7 @@ A dynamic pizza ordering menu that allows users to select different sizes and to
 
 Tic-Tac-Toe Game
 A fully interactive browser-based Tic-Tac-Toe game. The program randomly selects which player goes first and allows players to choose their tokens. The game includes win detection logic and celebratory animations and sound effects.  
-**Skills Demonstrated:**
+Skills Demonstrated:
 - Game logic implementation
 - Event listeners
 - Conditional statements
@@ -28,7 +28,7 @@ A fully interactive browser-based Tic-Tac-Toe game. The program randomly selects
 
 Calculator
 A functional four-operation calculator built with JavaScript. Users can perform addition, subtraction, multiplication, and division through a responsive web interface.  
-**Skills Demonstrated:**
+Skills Demonstrated:
 - Mathematical operations
 - Input validation
 - Button event handling
@@ -38,8 +38,8 @@ A functional four-operation calculator built with JavaScript. Users can perform 
 
 Technologies Used
 - HTML5
-- CSS3
 - JavaScript
+- CSS
 - Git & GitHub
 
 
